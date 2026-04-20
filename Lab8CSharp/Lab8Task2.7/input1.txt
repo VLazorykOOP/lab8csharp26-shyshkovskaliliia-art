@@ -1,0 +1,3 @@
+Привіт hello world! Це example текст.
+Як справи? Fine thank you.
+Англійське слово dog і cat.
