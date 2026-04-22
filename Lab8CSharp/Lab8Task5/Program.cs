@@ -7,7 +7,7 @@ namespace Lab8.Lab8Task5
 {
     internal class Lab8Task5
     {
-        private const string StudentName = "Shyshkovska"; // <-- ЗАМІНИТИ
+        private const string StudentName = "Shyshkovska"; 
 
         private readonly string _folder1;
         private readonly string _folder2;
@@ -28,7 +28,10 @@ namespace Lab8.Lab8Task5
             Step1_CreateDirectories();
             Step2_CreateTextFiles();
             Step3_CreateCombinedFile();
-            Step4_PrintFileInfo();
+            Console.WriteLine("── Крок 4: Інформація про файли ──");
+            PrintFileDetails(new FileInfo(Path.Combine(_folder1, "t1.txt")));
+            PrintFileDetails(new FileInfo(Path.Combine(_folder1, "t2.txt")));
+            PrintFileDetails(new FileInfo(Path.Combine(_folder2, "t3.txt")));
             Step5_MoveFile();
             Step6_CopyFile();
             Step7_RenameAndDelete();
@@ -131,13 +134,19 @@ namespace Lab8.Lab8Task5
             Console.WriteLine("── Крок 7: Перейменування та видалення ──");
 
             if (Directory.Exists(_folderAll))
-                Directory.Delete(_folderAll, recursive: true);
+                Directory.Delete(_folderAll, true);
 
-            Directory.Move(_folder2, _folderAll);
-            Console.WriteLine($"  Перейменовано: {_folder2}  →  {_folderAll}");
+            if (Directory.Exists(_folder2))
+            {
+                Directory.Move(_folder2, _folderAll);
+                Console.WriteLine($"  Перейменовано: {_folder2}  →  {_folderAll}");
+            }
 
-            Directory.Delete(_folder1, recursive: true);
-            Console.WriteLine($"  Видалено:      {_folder1}\n");
+            if (Directory.Exists(_folder1))
+            {
+                Directory.Delete(_folder1, true);
+                Console.WriteLine($"  Видалено:      {_folder1}\n");
+            }
         }
         private void Step8_PrintAllFolderInfo()
         {
