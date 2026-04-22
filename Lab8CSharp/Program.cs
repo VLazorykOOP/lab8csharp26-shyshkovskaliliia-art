@@ -21,6 +21,7 @@ namespace Lab8
                 Console.WriteLine("2. Завдання 2.7 (Робота з англійськими словами)");
                 Console.WriteLine("3. Завдання 3.22 (вилучення повторних літер)");
                 Console.WriteLine("4. Завдання 4.3 (числа Фібоначчі у двійковий файл)");
+                Console.WriteLine("5. Завдання 5 (робота з файловою системою)");
                 Console.WriteLine("0. Вихід");
                 Console.Write("\nВаш вибір: ");
 
@@ -44,6 +45,11 @@ namespace Lab8
                         break;
                     case "4":
                         Lab8.Lab8Task4._3.Program.Execute();
+                        BreakToMenu();
+                        break;
+                    case "5":
+                        Lab8.Lab8Task5.Lab8Task5 task5 = new Lab8.Lab8Task5.Lab8Task5();
+                        task5.Execute();
                         BreakToMenu();
                         break;
                     case "0":
